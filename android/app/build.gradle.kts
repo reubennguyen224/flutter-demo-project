@@ -32,13 +32,13 @@ android {
 
     flavorDimensions += "default"
     buildTypes {
-        release {
+        getByName("release") {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
         }
 
-        debug {
+        getByName("debug") {
             signingConfig = signingConfigs.getByName("debug")
         }
     }
@@ -48,6 +48,7 @@ android {
             dimension = "default"
             applicationIdSuffix = ".staging"
         }
+
         create("production") {
             dimension = "default"
             applicationIdSuffix = ".production"
